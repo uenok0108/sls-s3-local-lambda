@@ -1,0 +1,1 @@
+# sls-s3-local-lambda
