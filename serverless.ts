@@ -6,7 +6,12 @@ import s3hook from '@functions/s3hook';
 const serverlessConfiguration: AWS = {
   service: 'sls-s3-local-lambda',
   frameworkVersion: '3',
-  plugins: ['serverless-esbuild', 'serverless-s3-local', 'serverless-offline'],
+  plugins: [
+    'serverless-esbuild',
+    'serverless-iam-roles-per-function',
+    'serverless-s3-local',
+    'serverless-offline'
+  ],
   provider: {
     name: 'aws',
     runtime: 'nodejs14.x',

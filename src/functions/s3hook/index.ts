@@ -10,4 +10,14 @@ export default {
       },
     },
   ],
+  iamRoleStatementsInherit: true,
+  iamRoleStatements: [
+    {
+      Effect: "Allow",
+      Action: ["s3:GetObject"],
+      Resource: {
+        "Fn::Join": ["", [{ "Fn::GetAtt": ["TestBucket", "Arn"] }, "/*"]],
+      },
+    },
+  ],
 };
